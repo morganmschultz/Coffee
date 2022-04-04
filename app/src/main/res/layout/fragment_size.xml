@@ -33,44 +33,30 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <RadioButton
-                    android:id="@+id/vanilla"
+                    android:id="@+id/small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@{viewModel.flavor.equals(@string/vanilla)}"
-                    android:onClick="@{() -> viewModel.setFlavor(@string/vanilla)}"
-                    android:text="@string/vanilla" />
+                    android:checked="@{viewModel.size.equals(@string/small)}"
+                    android:onClick="@{() -> viewModel.setSize(@string/small)}"
+                    android:text="@string/small" />
 
                 <RadioButton
-                    android:id="@+id/chocolate"
+                    android:id="@+id/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@{viewModel.flavor.equals(@string/chocolate)}"
-                    android:onClick="@{() -> viewModel.setFlavor(@string/chocolate)}"
-                    android:text="@string/chocolate" />
+                    android:checked="@{viewModel.flavor.equals(@string/medium)}"
+                    android:onClick="@{() -> viewModel.setSize(@string/medium)}"
+                    android:text="@string/medium" />
 
                 <RadioButton
-                    android:id="@+id/red_velvet"
+                    android:id="@+id/large"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@{viewModel.flavor.equals(@string/red_velvet)}"
-                    android:onClick="@{() -> viewModel.setFlavor(@string/red_velvet)}"
-                    android:text="@string/red_velvet" />
+                    android:checked="@{viewModel.size.equals(@string/large)}"
+                    android:onClick="@{() -> viewModel.setSize(@string/large)}"
+                    android:text="@string/large" />
 
-                <RadioButton
-                    android:id="@+id/salted_caramel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="@{viewModel.flavor.equals(@string/salted_caramel)}"
-                    android:onClick="@{() -> viewModel.setFlavor(@string/salted_caramel)}"
-                    android:text="@string/salted_caramel" />
 
-                <RadioButton
-                    android:id="@+id/coffee"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="@{viewModel.flavor.equals(@string/coffee)}"
-                    android:onClick="@{() -> viewModel.setFlavor(@string/coffee)}"
-                    android:text="@string/coffee" />
             </RadioGroup>
 
             <View

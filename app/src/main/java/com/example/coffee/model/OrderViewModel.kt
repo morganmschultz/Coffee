@@ -21,8 +21,8 @@ class OrderViewModel : ViewModel() {
     val quantity: LiveData<Int> = _quantity
 
     // Cupcake flavor for this order
-    private val _flavor = MutableLiveData<String>()
-    val flavor: LiveData<String> = _flavor
+    private val _size = MutableLiveData<String>()
+    val size: LiveData<String> = _size
 
     // Possible date options
     val dateOptions: List<String> = getPickupOptions()
@@ -39,23 +39,19 @@ class OrderViewModel : ViewModel() {
     }
 
     init {
-        // Set initial values for the order
+
         resetOrder()
     }
 
-    /**
-     * Set the quantity of cupcakes for this order.
-     *
-     * @param numberCupcakes to order
-     */
+
     fun setQuantity(numberCupcakes: Int) {
         _quantity.value = numberCupcakes
         updatePrice()
     }
 
 
-    fun setFlavor(desiredFlavor: String) {
-        _flavor.value = desiredFlavor
+    fun setSize(desiredSize: String) {
+        _size.value = desiredSize
     }
 
 
@@ -65,21 +61,19 @@ class OrderViewModel : ViewModel() {
     }
 
 
-    fun hasNoFlavorSet(): Boolean {
-        return _flavor.value.isNullOrEmpty()
+    fun hasNoSizeSet(): Boolean {
+        return _size.value.isNullOrEmpty()
     }
 
 
     fun resetOrder() {
         _quantity.value = 0
-        _flavor.value = ""
+        _size.value = ""
         _date.value = dateOptions[0]
         _price.value = 0.0
     }
 
-    /**
-     * Updates the price based on the order details.
-     */
+
     private fun updatePrice() {
         var calculatedPrice = (quantity.value ?: 0) * PRICE_PER_CUPCAKE
         // If the user selected the first option (today) for pickup, add the surcharge
@@ -89,9 +83,7 @@ class OrderViewModel : ViewModel() {
         _price.value = calculatedPrice
     }
 
-    /**
-     * Returns a list of date options starting with the current date and the following 3 dates.
-     */
+
     private fun getPickupOptions(): List<String> {
         val options = mutableListOf<String>()
         val formatter = SimpleDateFormat("E MMM d", Locale.getDefault())
