@@ -38,13 +38,13 @@ class StartFragment : Fragment() {
     }
 
 
-    fun orderCupcake(quantity: Int) {
+    fun orderCoffee(quantity: Int) {
         // Update the view model with the quantity
         sharedViewModel.setQuantity(quantity)
 
         // If no flavor is set in the view model yet, select vanilla as default flavor
-        if (sharedViewModel.hasNoFlavorSet()) {
-            sharedViewModel.setFlavor(getString(R.string.vanilla))
+        if (sharedViewModel.hasNoSizeSet()) {
+            sharedViewModel.setSize(getString(R.string.small))
         }
 
         // Navigate to the next destination to select the flavor of the cupcakes
