@@ -14,12 +14,9 @@ import com.example.coffee.R
 
 class SizeFragment : Fragment() {
 
-    // Binding object instance corresponding to the fragment_flavor.xml layout
-    // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
-    // when the view hierarchy is attached to the fragment.
+
     private var binding: FragmentSizeBinding? = null
 
-    // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     private val sharedViewModel: OrderViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -46,17 +43,12 @@ class SizeFragment : Fragment() {
         }
     }
 
-    /**
-     * Navigate to the next screen to choose pickup date.
-     */
+
     fun goToNextScreen() {
         findNavController().navigate(R.id.action_sizeFragment_to_pickupFragment)
     }
 
-    /**
-     * This fragment lifecycle method is called when the view hierarchy associated with the fragment
-     * is being removed. As a result, clear out the binding object.
-     */
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null

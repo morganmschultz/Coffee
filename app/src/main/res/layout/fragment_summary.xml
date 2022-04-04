@@ -59,20 +59,20 @@
                     android:layout_marginBottom="@dimen/side_margin" />
 
                 <TextView
-                    android:id="@+id/flavor_label"
+                    android:id="@+id/size_label"
                     style="@style/Widget.Cupcake.TextView.Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/flavor" />
+                    android:text="@string/size" />
 
                 <TextView
-                    android:id="@+id/flavor"
+                    android:id="@+id/size"
                     style="@style/Widget.Cupcake.TextView.OrderSummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
-                    android:text="@{viewModel.flavor}"
-                    tools:text="Chocolate" />
+                    android:text="@{viewModel.size}"
+                    tools:text="@string/small" />
 
                 <View
                     android:id="@+id/divider2"

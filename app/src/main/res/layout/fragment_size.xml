@@ -44,7 +44,7 @@
                     android:id="@+id/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="@{viewModel.flavor.equals(@string/medium)}"
+                    android:checked="@{viewModel.size.equals(@string/medium)}"
                     android:onClick="@{() -> viewModel.setSize(@string/medium)}"
                     android:text="@string/medium" />
 
