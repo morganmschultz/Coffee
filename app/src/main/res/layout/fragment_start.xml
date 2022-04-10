@@ -56,7 +56,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:onClick="@{() -> startFragment.orderCoffee(1)}"
+                android:onClick="@{() -> startFragment.orderCappuccino(2)}"
                 android:text="@string/latte" />
 
             <Button
@@ -66,7 +66,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:onClick="@{() -> startFragment.orderCoffee(1)}"
+                android:onClick="@{() -> startFragment.orderLatte(3)}"
                 android:text="@string/cappuccino" />
         </LinearLayout>
     </ScrollView>

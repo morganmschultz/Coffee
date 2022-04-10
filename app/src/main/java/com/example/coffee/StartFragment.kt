@@ -39,15 +39,26 @@ class StartFragment : Fragment() {
 
 
     fun orderCoffee(quantity: Int) {
-        // Update the view model with the quantity
-        sharedViewModel.setQuantity(quantity)
+        //quanitity is the id of the item (1=coffee, 2=capp, 3 = latte)
+        sharedViewModel.setQuantity(1)
 
-        // If no flavor is set in the view model yet, select vanilla as default flavor
-        if (sharedViewModel.hasNoSizeSet()) {
-            sharedViewModel.setSize(getString(R.string.small))
-        }
 
-        // Navigate to the next destination to select the flavor of the cupcakes
+        findNavController().navigate(R.id.action_startFragment_to_sizeFragment)
+    }
+
+    fun orderCappuccino(quantity: Int) {
+        sharedViewModel.setQuantity(2)
+
+
+
+        findNavController().navigate(R.id.action_startFragment_to_sizeFragment)
+    }
+
+    fun orderLatte(quantity: Int) {
+        sharedViewModel.setQuantity(3)
+
+
+
         findNavController().navigate(R.id.action_startFragment_to_sizeFragment)
     }
 

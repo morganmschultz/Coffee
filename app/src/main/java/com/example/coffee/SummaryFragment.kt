@@ -11,10 +11,6 @@ import androidx.fragment.app.activityViewModels
 import com.example.coffee.databinding.FragmentSummaryBinding
 import com.example.coffee.model.OrderViewModel
 
-/**
- * [SummaryFragment] contains a summary of the order details with a button to share the order
- * via another app.
- */
 class SummaryFragment : Fragment() {
 
     // Binding object instance corresponding to the fragment_summary.xml layout
@@ -44,17 +40,12 @@ class SummaryFragment : Fragment() {
         }
     }
 
-    /**
-     * Submit the order by sharing out the order details to another app via an implicit intent.
-     */
+
     fun sendOrder() {
         Toast.makeText(activity, "Send Order", Toast.LENGTH_SHORT).show()
     }
 
-    /**
-     * This fragment lifecycle method is called when the view hierarchy associated with the fragment
-     * is being removed. As a result, clear out the binding object.
-     */
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
