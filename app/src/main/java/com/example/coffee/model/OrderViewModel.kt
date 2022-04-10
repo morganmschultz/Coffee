@@ -23,6 +23,9 @@ class OrderViewModel : ViewModel() {
     private val _quantity = MutableLiveData<Int>()
     val quantity: LiveData<Int> = _quantity
 
+    private val _type = MutableLiveData<String>()
+    val type: LiveData<String> = _type
+
     // coffee size for order
     private val _size = MutableLiveData<String>()
     val size: LiveData<String> = _size
@@ -71,6 +74,7 @@ class OrderViewModel : ViewModel() {
     fun resetOrder() {
         _quantity.value = 0
         _size.value = ""
+        _type.value = ""
         _date.value = dateOptions[0]
         _price.value = 0.0
     }
@@ -81,14 +85,17 @@ class OrderViewModel : ViewModel() {
         //if coffee
         if(_quantity.value == 1){
             calculatedPrice = PRICE_PER_COFFEE
+            _type.value = "Coffee"
         }
         //if capp
         if(_quantity.value == 2){
             calculatedPrice = PRICE_PER_CAPPUCCINO
+            _type.value = "Cappuccino"
         }
         //if latte
         if(_quantity.value == 3){
             calculatedPrice = PRICE_PER_LATTE
+            _type.value = "Latte"
         }
         if(_size.value == "Medium"){
             calculatedPrice *= PRICE_FOR_MEDIUM
