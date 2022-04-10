@@ -48,6 +48,11 @@ class SizeFragment : Fragment() {
         findNavController().navigate(R.id.action_sizeFragment_to_pickupFragment)
     }
 
+    fun cancelOrder() {
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_sizeFragment_to_startFragment)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
